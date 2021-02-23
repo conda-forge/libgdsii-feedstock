@@ -1,7 +1,7 @@
 {% set name = "libGDSII" %}
 {% set version = "0.21" %}
 {% set sha256 = "31c90a4fb699746d051c0c597ef0543889c9f17b2a711fed398756ac4f1b1f4c" %}
-{% set build = 3 %}
+{% set build = 4 %}
 
 package:
   name: {{ name|lower }}
