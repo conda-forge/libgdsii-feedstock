@@ -1,25 +1,22 @@
-{% set name = "libGDSII" %}
 {% set version = "0.21" %}
-{% set sha256 = "31c90a4fb699746d051c0c597ef0543889c9f17b2a711fed398756ac4f1b1f4c" %}
-{% set build = 4 %}
 
 package:
-  name: {{ name|lower }}
+  name: libgdsii
   version: {{ version }}
 
 source:
-  fn: {{ name|lower }}-{{ version }}.tar.gz
-  url: https://github.com/HomerReid/{{ name }}/releases/download/v{{ version }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://github.com/HomerReid/libGDSII/releases/download/v{{ version }}/libgdsii-{{ version }}.tar.gz
+  sha256: 31c90a4fb699746d051c0c597ef0543889c9f17b2a711fed398756ac4f1b1f4c
 
 build:
-  number: {{ build }}
+  number: 5
   skip: true  # [win]
 
 requirements:
   build:
-    - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
+    - gnuconfig  # [unix]
     - make
 
 test:
